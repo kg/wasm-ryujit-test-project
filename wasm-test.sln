@@ -1,0 +1,69 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36717.8
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wasm-test", "wasm-test.csproj", "{E4517450-FC71-4619-81F5-F0872F5F53FC}"
+EndProject
+Project("{911E67C6-3D85-4FCE-B560-20A9C3E3FF48}") = "crossgen2", "..\runtime\artifacts\bin\coreclr\windows.x64.Debug\x64\crossgen2\crossgen2.exe", "{34E83669-86B7-5DAA-AC0C-6548242B4DAA}"
+	ProjectSection(DebuggerProjectSystem) = preProject
+		PortSupplier = 00000000-0000-0000-0000-000000000000
+		Executable = Z:\runtime\artifacts\bin\coreclr\windows.x64.Debug\x64\crossgen2\crossgen2.exe
+		RemoteMachine = ROSA
+		StartingDirectory = Z:\runtime\
+		Arguments = @Z:\runtime\cg2.rsp
+		Environment = Default
+		LaunchingEngine = 00000000-0000-0000-0000-000000000000
+		UseLegacyDebugEngines = No
+		LaunchSQLEngine = No
+		AttachLaunchAction = No
+		IORedirection = Auto
+	EndProjectSection
+EndProject
+Project("{911E67C6-3D85-4FCE-B560-20A9C3E3FF48}") = "corerun", "..\runtime\artifacts\bin\coreclr\windows.x64.Debug\corerun.exe", "{397E625D-C42A-E899-57A5-029FD820F6E1}"
+	ProjectSection(DebuggerProjectSystem) = preProject
+		PortSupplier = 00000000-0000-0000-0000-000000000000
+		Executable = Z:\runtime\artifacts\bin\coreclr\windows.x64.Debug\corerun.exe
+		RemoteMachine = ROSA
+		StartingDirectory = Z:\wasm-test\bin\Release\net9.0\Disasmo-v5.9.2
+		Arguments = "DisasmoLoader4.dll" "wasm-test.dll" "Program" "increaseFloat" False
+		Environment = core_libraries=Z:\runtime\artifacts\bin\runtime\net10.0-windows-Release-x64	dotnet_jitdump=*Program:*	dotnet_altjit=*Program:*	dotnet_tieredcompilation=0	dotnet_readytorun=1	dotnet_altjitname=clrjit_universal_wasm_x64.dll	dotnet_tieredpgo=0	
+		LaunchingEngine = 00000000-0000-0000-0000-000000000000
+		UseLegacyDebugEngines = No
+		LaunchSQLEngine = No
+		AttachLaunchAction = No
+		IORedirection = Auto
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E4517450-FC71-4619-81F5-F0872F5F53FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4517450-FC71-4619-81F5-F0872F5F53FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4517450-FC71-4619-81F5-F0872F5F53FC}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E4517450-FC71-4619-81F5-F0872F5F53FC}.Debug|x64.Build.0 = Debug|Any CPU
+		{E4517450-FC71-4619-81F5-F0872F5F53FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4517450-FC71-4619-81F5-F0872F5F53FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4517450-FC71-4619-81F5-F0872F5F53FC}.Release|x64.ActiveCfg = Release|Any CPU
+		{E4517450-FC71-4619-81F5-F0872F5F53FC}.Release|x64.Build.0 = Release|Any CPU
+		{34E83669-86B7-5DAA-AC0C-6548242B4DAA}.Debug|Any CPU.ActiveCfg = Release|x64
+		{34E83669-86B7-5DAA-AC0C-6548242B4DAA}.Debug|x64.ActiveCfg = Release|x64
+		{34E83669-86B7-5DAA-AC0C-6548242B4DAA}.Release|Any CPU.ActiveCfg = Release|x64
+		{34E83669-86B7-5DAA-AC0C-6548242B4DAA}.Release|x64.ActiveCfg = Release|x64
+		{397E625D-C42A-E899-57A5-029FD820F6E1}.Debug|Any CPU.ActiveCfg = Release|x64
+		{397E625D-C42A-E899-57A5-029FD820F6E1}.Debug|x64.ActiveCfg = Release|x64
+		{397E625D-C42A-E899-57A5-029FD820F6E1}.Release|Any CPU.ActiveCfg = Release|x64
+		{397E625D-C42A-E899-57A5-029FD820F6E1}.Release|x64.ActiveCfg = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3C98E571-7E24-4C9B-80E3-FFDAFE8FF2BA}
+	EndGlobalSection
+EndGlobal
