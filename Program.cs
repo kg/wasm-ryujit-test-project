@@ -68,7 +68,8 @@ public static unsafe class Program {
     }
     */
 
-    /*
+    /* FIXME: Generates use of an undefined local arg2
+     * [CompileError: WebAssembly.compile(): Compiling function #6 failed: invalid local index: 2 @+562]
     [MethodImpl(MethodImplOptions.NoOptimization | MethodImplOptions.NoInlining)]
     public static int Main () => 0;
     */
