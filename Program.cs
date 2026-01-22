@@ -13,15 +13,11 @@ public static unsafe class Program {
     [MethodImpl(MethodImplOptions.NoOptimization | MethodImplOptions.NoInlining)]
     static float increaseFloat (float f) => f + 1.5f;
 
-    /*
-
     [MethodImpl(MethodImplOptions.NoOptimization | MethodImplOptions.NoInlining)]
     static int derefIntPtr (int* p) => *p;
 
     [MethodImpl(MethodImplOptions.NoOptimization | MethodImplOptions.NoInlining)]
     static int derefBytePtr (byte* p) => *p;
-
-    */
 
     // FIXME: Cast
     /*
